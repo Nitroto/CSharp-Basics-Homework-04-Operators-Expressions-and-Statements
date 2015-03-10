@@ -1,0 +1,35 @@
+using System;
+
+class PointInsideACircleAndOutsideOfARectangle
+{
+    static void Main()
+    {
+        while (true)
+        {
+            double x = Double.Parse(Console.ReadLine());
+            double y = Double.Parse(Console.ReadLine());
+            double xCenter = 1;
+            double yCenter = 1;
+            double r = 1.5;
+            bool inCircle = false;
+            bool inRectangle = false;
+            if (((x - xCenter) * (x - xCenter) + (y - yCenter) * (y - yCenter)) <= r * r)
+            {
+                inCircle = true;
+                if ((x >= -1 && x <= 5) && (y >= -1 && y <= 1))
+                {
+                    inRectangle = true;
+                    Console.WriteLine("no");
+                }
+            }
+            else
+            {
+                Console.WriteLine("no");
+            }
+            if (inCircle && !inRectangle)
+            {
+                Console.WriteLine("yes");
+            }
+        }
+    }
+}
